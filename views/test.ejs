@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kendini Test Et - Yalnız Değilsin</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-test">
+    <header>
+        <div class="logo">Yalnız Değilsin</div>
+  <nav>
+    <a href="/">Ana Sayfa</a>
+    <a href="/belirtiler">Belirtiler</a>
+    <a href="/basa-cikma">Başa Çıkma</a>
+    <a href="/test">Kendini Test Et</a>
+    <a href="/anonim">Anonim Alan</a>
+    <a href="/yardim">Yardım Al</a>
+    <a href="/destek-odalari">Destek Odaları</a>
+  </nav>
+</header><main class="container" style="margin-top:0; padding-top:0;">
+
+  <section class="hero">
+  <div class="hero-content">
+    <div class="title-group">
+      <span class="hero-tag">Kendi Ruh Halini Tanı</span>
+      <h1>Kendini Test Et</h1>
+    </div>
+    <p>
+      Kısa sorularla ruh halin hakkında farkındalık kazan ve kendini tanı. 
+      Bu test bir teşhis değil, sadece bir ön değerlendirmedir.
+    </p>
+  </div>
+
+  <div class="hero-image-test"></div>
+</section>
+
+
+  <section class="info-card">
+    <h2>Başlamadan Önce</h2>
+<p class="test-aciklama">
+İstersen ad ve soyadını girerek test sonuçlarını daha sonra eski sonuçlarınla karşılaştırabilirsin.
+</p>
+    <form id="testForm" class="test-form">
+
+      <label>Adın (isteğe bağlı)</label>
+      <input type="text" id="ad" placeholder="Adını yazabilirsin">
+      <label>Soyadın</label>
+<input 
+  type="text" 
+  name="soyad" 
+  placeholder="Soyadını yaz"
+  
+>
+<label class="anonim-secim">
+  <input type="checkbox" id="anonimTest">
+  Anonim olarak devam etmek istiyorum
+</label>
+<input type="hidden" name="kullanici_kodu" id="kullaniciKodu">
+
+      <label>Yaşın</label>
+      <input type="number" id="yas" placeholder="Yaşını yaz">
+
+      <label>Bugünkü stres seviyen kaç? (1-10)</label>
+      <input type="number" id="stres" min="1" max="10" placeholder="1 ile 10 arası">
+
+      <h2>Test Soruları</h2>
+
+      <div class="question">
+        <p>1. Son günlerde kendini sık sık üzgün veya boşlukta hissediyor musun?</p>
+        <select required>
+          <option value="">Seç</option>
+          <option value="0">Hayır</option>
+          <option value="1">Bazen</option>
+          <option value="2">Sık sık</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <p>2. Eskiden keyif aldığın şeylere ilgin azaldı mı?</p>
+        <select required>
+          <option value="">Seç</option>
+          <option value="0">Hayır</option>
+          <option value="1">Bazen</option>
+          <option value="2">Sık sık</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <p>3. Uyku düzeninde belirgin bir değişiklik var mı?</p>
+        <select required>
+          <option value="">Seç</option>
+          <option value="0">Hayır</option>
+          <option value="1">Bazen</option>
+          <option value="2">Sık sık</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <p>4. Gün içinde sık sık endişeli veya gergin hissediyor musun?</p>
+        <select required>
+          <option value="">Seç</option>
+          <option value="0">Hayır</option>
+          <option value="1">Bazen</option>
+          <option value="2">Sık sık</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <p>5. Kendini çevrendekiler tarafından anlaşılmamış hissediyor musun?</p>
+        <select required>
+          <option value="">Seç</option>
+          <option value="0">Hayır</option>
+          <option value="1">Bazen</option>
+          <option value="2">Sık sık</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <p>6. Sosyal ortamlardan uzaklaşma isteğin arttı mı?</p>
+        <select required>
+          <option value="">Seç</option>
+          <option value="0">Hayır</option>
+          <option value="1">Bazen</option>
+          <option value="2">Sık sık</option>
+        </select>
+      </div>
+      <div class="question">
+  <p>7. Kendini sık sık değersiz veya yetersiz hissediyor musun?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+<div class="question">
+  <p>8. Gelecek hakkında umutsuz hissediyor musun?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+<div class="question">
+  <p>9. İnsanlarla iletişim kurmakta zorlanıyor musun?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+<div class="question">
+  <p>10. Gün içinde motivasyon eksikliği yaşıyor musun?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+<div class="question">
+  <p>11. Sürekli olumsuz düşünceler aklına geliyor mu?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+<div class="question">
+  <p>12. Nedensiz yorgunluk veya halsizlik hissediyor musun?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+<div class="question">
+  <p>13. Duygularını başkalarına anlatmakta zorlanıyor musun?</p>
+  <select required>
+    <option value="">Seç</option>
+    <option value="0">Hayır</option>
+    <option value="1">Bazen</option>
+    <option value="2">Sık sık</option>
+  </select>
+</div>
+  
+      <button type="submit">Sonucu Göster</button>
+    </form>
+  </section>
+
+  <section id="sonucKutusu" class="info-card result-card" style="display:none;">
+    <h2 id="sonucBaslik"></h2>
+    <p id="sonucMetni"></p>
+
+    <div class="result-buttons">
+      <a href="/basa-cikma" class="hero-button">Başa Çıkma Yöntemleri</a>
+      <a href="/anonim" class="hero-button">Anonim Paylaşım</a>
+      <a href="/yardim" class="hero-button">Yardım Al</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const anonimCheckbox = document.getElementById("anonimTest");
+const adInput = document.getElementById("ad");
+const soyadInput = document.querySelector("[name='soyad']");
+
+anonimCheckbox.addEventListener("change", () => {
+
+    if (anonimCheckbox.checked) {
+
+        adInput.disabled = true;
+        soyadInput.disabled = true;
+
+        adInput.style.opacity = "0.5";
+        soyadInput.style.opacity = "0.5";
+
+    } else {
+
+        adInput.disabled = false;
+        soyadInput.disabled = false;
+
+        adInput.style.opacity = "1";
+        soyadInput.style.opacity = "1";
+    }
+});
+document.getElementById("testForm").addEventListener("submit", function(e) {
+  
+  e.preventDefault();
+  const anonimTest = document.getElementById("anonimTest").checked;
+
+const ad = anonimTest ? "Anonim" : document.getElementById("ad").value;
+const soyad = anonimTest ? "" : document.querySelector("[name='soyad']").value;
+const kullanici_kodu = anonimTest ? null : document.getElementById("kullaniciKodu").value;
+
+
+  const stres = Number(document.getElementById("stres").value) || 0;
+
+  let puan = 0;
+
+  document.querySelectorAll(".question select").forEach(secim => {
+    puan += Number(secim.value);
+  });
+
+  puan += stres >= 8 ? 2 : stres >= 5 ? 1 : 0;
+
+  let sonuc = "";
+
+  if (puan <= 6) {
+    sonuc = "hafif";
+  } else if (puan <= 14) {
+    sonuc = "orta";
+  } else {
+    sonuc = "yuksek";
+  }
+  
+
+
+const soruSayisi = document.querySelectorAll(".question select").length;
+const maxPuan = (soruSayisi * 2) + 2; // +2 stres bonusu için
+
+
+localStorage.setItem("sonuc", sonuc);
+localStorage.setItem("ad", ad);
+localStorage.setItem("puan", puan);
+localStorage.setItem("maxPuan", maxPuan);
+localStorage.setItem("anonimMi", anonimTest);
+fetch("/test-kaydet", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    ad,
+    yas: document.getElementById("yas").value || null,
+    stres,
+    puan,
+    maxPuan,
+    sonuc
+  })
+})
+.then(res => res.json())
+.then(data => {
+    // data.fark varsa onu kullan, yoksa 0 yaz geç (hata almasını önler)
+    const gelenFark = (data && data.fark !== undefined) ? data.fark : 0;
+    localStorage.setItem("iyilesmeFarki", gelenFark);
+    
+    // Ve nihayet yönlendir!
+    window.location.href = "/sonuc";
+})
+});
+</script>
+<script>
+  let kod = localStorage.getItem("kullanici_kodu");
+
+  if (!kod) {
+    kod = "YD-" + Date.now() + "-" + Math.floor(Math.random() * 999999);
+    localStorage.setItem("kullanici_kodu", kod);
+  }
+
+  document.getElementById("kullaniciKodu").value = kod;
+</script>
+
+
+</body>
+</html>

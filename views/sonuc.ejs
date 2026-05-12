@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sonuç - Yalnız Değilsin</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Yalnız Değilsin</div>
+  <nav>
+    <a href="/">Ana Sayfa</a>
+    <a href="/belirtiler">Belirtiler</a>
+    <a href="/basa-cikma">Başa Çıkma</a>
+    <a href="/test">Kendini Test Et</a>
+    <a href="/anonim">Anonim Alan</a>
+    <a href="/yardim">Yardım Al</a>
+    <a href="/destek-odalari">Destek Odaları</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Sonuç Analizin</h1>
+    <p>Verdiğin cevaplara göre sana uygun yönlendirmeler aşağıda gösterilmiştir.</p>
+  </section>
+
+  <section class="info-card result-card" id="sonucKart">
+  <div class="result-badge" id="sonucSeviye">Analiz</div>
+
+  <h2 id="sonucBaslik">Sonuç hazırlanıyor...</h2>
+  <p id="sonucMetni"></p>
+
+ <div class="score-box">
+  <h3>Test Skorun</h3>
+  <p><span id="puanText">0</span></p>
+</div>
+<div class="score-box">
+  <h3>Benzer Sonuçlar</h3>
+  <p id="benzerKisi">Hesaplanıyor...</p>
+</div>
+<div class="score-box">
+  <h3>Önceki Teste Göre Durum</h3>
+  <p id="gelisimDurumu">Hesaplanıyor...</p>
+</div>
+
+  <div class="progress-area">
+    <p>Destek ihtiyacı seviyesi</p>
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+  </div>
+
+  <h3>Önerilen Adımlar</h3>
+  <div class="result-buttons">
+    <a href="/basa-cikma" class="hero-button">Başa Çıkma Yöntemleri</a>
+    <a href="/anonim" class="hero-button">Anonim Paylaşım</a>
+    <a href="/yardim" class="hero-button">Yardım Al</a>
+    <a id="odaYonlendirme" href="/destek-odalari" class="hero-button">
+  Bana Uygun Destek Odasına Git
+</a>
+  </div>
+</section>
+</main>
+
+<script src="/sonuc.js"></script>
+</body>
+</html>

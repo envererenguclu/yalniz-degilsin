@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Destek Odası</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<body class="page-oda">
+<header>
+  <div class="logo">Yalnız Değilsin</div>
+  <nav>
+    <a href="/">Ana Sayfa</a>
+    <a href="/destek-odalari">Destek Odaları</a>
+    <a href="/yardim">Yardım Al</a>
+  </nav>
+</header>
+
+<main class="container oda-page">
+  <section class="room-hero">
+    <div class="room-hero-inner">
+
+        <div class="room-hero-text">
+            <h1>
+  <% if (odaAdi === "kaygi") { %>
+    Kaygı Odası
+  <% } else if (odaAdi === "yalnizlik") { %>
+    Yalnızlık Odası
+  <% } else if (odaAdi === "motivasyon") { %>
+    Motivasyon Odası
+  <% } else { %>
+    Destek Odası
+  <% } %>
+</h1>
+
+           <p>
+  <% if (odaAdi === "kaygi") { %>
+    Kaygılarını paylaşabilir, benzer duygular yaşayan insanlarla güvenli şekilde konuşabilirsin.
+  <% } else if (odaAdi === "yalnizlik") { %>
+    Kendini yalnız veya anlaşılmamış hissettiğinde, burada düşüncelerini güvenli şekilde paylaşabilirsin.
+  <% } else if (odaAdi === "motivasyon") { %>
+    Küçük adımlar, moral ve destek mesajlarıyla birbirine güç verebilirsin.
+  <% } else { %>
+    Duygularını anonim şekilde paylaşabilir ve destek alabilirsin.
+  <% } %>
+</p>
+        </div>
+
+        <div class="room-hero-image">
+
+  <% if (odaAdi === "kaygi") { %>
+    <img src="https://images.openai.com/static-rsc-4/i85Woft-HqavKzN4FrLyUTVwXeFfm3sAg9_Xc2_KkvPokqLoX9GPzOUZ5Kq6w_Thjwcy-PNNYKrmsFpS2HiAfKxCvGCw_2gATSvYXEF9F7yy0o78giC9IbG6mc-aPK2DBVKbInnUJM5ymPlbUDX9pt2PtDnjjGVzPgt4ZxQ_XZ5IfF4tWhzrctiNO58wH9CA?purpose=fullsize" alt="Kaygı Odası">
+
+  <% } else if (odaAdi === "yalnizlik") { %>
+    <img src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?q=80&w=1000&auto=format&fit=crop" alt="Yalnızlık Odası">
+
+  <% } else if (odaAdi === "motivasyon") { %>
+    <img src="https://images.openai.com/static-rsc-4/6SqVUjkQUHZwczsaZbPEXcA3eE4_OJaWaX6t_tjIkCTUtvko-Xxm7unlTVEKLR2E3ISDZBTGlecIULVNwS93hNrHP3I4soGbIlTlyf1t4gM8KIsyrUzW4IYFReDBRQ_P4tUL7hmV_qmBUUu4eRHbvZmge1TOw1fzIy3h8KeUcH5FczC7hAMCZ_lXxj6Pmnfe?purpose=fullsize" alt="Motivasyon Odası">
+
+  <% } else { %>
+    <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?q=80&w=1000&auto=format&fit=crop" alt="Destek Odası">
+
+  <% } %>
+
+</div>
+
+    </div>
+</section>
+
+  <section class="chat-shell">
+    <div class="chat-header">
+      <div>
+        <h2>Oda Sohbeti</h2>
+        <p>Mesajlar anlık olarak bu odaya düşer.</p>
+      </div>
+    </div>
+
+    <div id="chatPanel" class="chat-panel">
+      <div id="chatAlani">
+        <% if (mesajlar.length === 0) { %>
+          <p class="empty-chat">Bu odada henüz paylaşım yok. İlk mesajı sen yazabilirsin.</p>
+        <% } else { %>
+          <% mesajlar.forEach(m => { %>
+            <div class="message-card">
+              <strong><%= m.kullanici_adi || "Anonim Kullanıcı" %></strong>
+              <p><%= m.mesaj %></p>
+              <small><%= m.tarih %></small>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <% for (let i = 1; i <= toplamSayfa; i++) { %>
+        <a
+          href="/oda/<%= odaAdi %>?sayfa=<%= i %>"
+          class="<%= sayfa === i ? 'active-page' : '' %>"
+        >
+          <%= i %>
+        </a>
+      <% } %>
+    </div>
+
+    <div class="chat-composer">
+      <input
+        type="text"
+        id="kullaniciAdi"
+        placeholder="Adın (boş bırakırsan anonim görünür)"
+      >
+
+      <textarea
+        id="mesajInput"
+        placeholder="Bu odada paylaşmak istediğin şeyi yaz..."
+        required
+      ></textarea>
+
+      <button type="button" onclick="mesajGonder()">Sohbete Gönder</button>
+    </div>
+  </section>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  const socket = io();
+  const odaAdi = "<%= odaAdi %>";
+
+  socket.emit("oda-katil", odaAdi);
+
+  function enAltaKaydir() {
+    const chatPanel = document.getElementById("chatPanel");
+    chatPanel.scrollTop = chatPanel.scrollHeight;
+  }
+
+  function mesajGonder() {
+    const kullaniciAdi = document.getElementById("kullaniciAdi").value || "Anonim Kullanıcı";
+    const mesajInput = document.getElementById("mesajInput");
+    const mesaj = mesajInput.value.trim();
+
+    if (mesaj === "") return;
+
+    socket.emit("oda-mesaj", {
+      odaAdi,
+      kullanici_adi: kullaniciAdi,
+      mesaj
+    });
+
+    mesajInput.value = "";
+  }
+
+  socket.on("oda-mesaj", (data) => {
+    const chatAlani = document.getElementById("chatAlani");
+
+    const div = document.createElement("div");
+    div.className = "message-card";
+    div.innerHTML = `
+      <strong>${data.kullanici_adi}</strong>
+      <p>${data.mesaj}</p>
+      <small>${data.tarih}</small>
+    `;
+
+    chatAlani.appendChild(div);
+    enAltaKaydir();
+  });
+
+  document.getElementById("mesajInput").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      mesajGonder();
+    }
+  });
+
+  window.addEventListener("load", enAltaKaydir);
+</script>
+
+</body>
+</html>

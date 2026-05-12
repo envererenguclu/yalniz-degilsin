@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Anonim Alan - Yalnız Değilsin</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="page-anonim">
+
+<header>
+  <div class="logo">Yalnız Değilsin</div>
+  <nav>
+    <a href="/">Ana Sayfa</a>
+    <a href="/belirtiler">Belirtiler</a>
+    <a href="/basa-cikma">Başa Çıkma</a>
+    <a href="/test">Kendini Test Et</a>
+    <a href="/anonim">Anonim Alan</a>
+    <a href="/yardim">Yardım Al</a>
+    <a href="/destek-odalari">Destek Odaları</a>
+  </nav>
+</header>
+
+<main class="container">
+
+<section class="hero-full">
+    <div class="hero-inner">
+        <div class="hero-text-content">
+            <span class="hero-tag">Anonim Paylaşım</span>
+            <h1>İçinden Geçeni Paylaş</h1>
+            <p>Bu alan, kullanıcıların kimliklerini belirtmeden duygu ve düşüncelerini ifade edebilmeleri için hazırlanmıştır.</p>
+        </div>
+        <div class="hero-image-content">
+            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=1000&auto=format&fit=crop" alt="Notes">
+        </div>
+    </div>
+</section>
+
+  <section class="info-card">
+    <h2>Duygunu Anonim Olarak Paylaş</h2>
+    <p>
+      Bazen insanın rahatlaması için yalnızca anlatmaya ihtiyacı vardır.
+      Buraya yazdığın paylaşım kimlik bilgisi olmadan kaydedilir.
+    </p>
+
+    <form action="/mesaj" method="POST" class="test-form">
+      <textarea name="mesaj" placeholder="Bugün nasıl hissediyorsun? İçinden geçenleri yaz..." required></textarea>
+      <button type="submit">Anonim Paylaş</button>
+    </form>
+    
+  </section>
+
+  <section class="info-card">
+    <h2>Anonim Paylaşımlar</h2>
+
+    <% if (mesajlar.length === 0) { %>
+      <p>Henüz paylaşım yok. İlk paylaşımı sen yapabilirsin.</p>
+    <% } else { %>
+      <% mesajlar.forEach(m => { %>
+        <div class="message-card">
+          <p><%= m.mesaj %></p>
+          <small><%= new Date(m.tarih).toLocaleDateString("tr-TR") %></small>
+        </div>
+      <% }) %>
+    <% } %>
+    <div class="pagination">
+  <% for (let i = 1; i <= toplamSayfa; i++) { %>
+    <a 
+      href="/anonim?sayfa=<%= i %>" 
+      class="<%= sayfa === i ? 'active-page' : '' %>"
+    >
+      <%= i %>
+    </a>
+  <% } %>
+</div>
+  </section>
+
+</main>
+
+</body>
+</html>
