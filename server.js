@@ -81,27 +81,32 @@ app.get("/sonuc", (req, res) => {
   res.render("sonuc");
 });
 app.post("/test-kaydet", (req, res) => {
-  
-const { ad, soyad, yas, stres, puan, maxPuan, sonuc, kullanici_kodu, anonimTest } = req.body;
-if (anonimTest) {
-  return res.json({
-    success: true,
-    puan,
-    maxPuan,
-    sonuc,
-    benzerSayi: 0,
-    oncekiFark: null,
-    anonim: true
-  });
-}
+  const { ad, soyad, yas, stres, puan, maxPuan, sonuc, anonimTest } = req.body;
 
-  const kullaniciAdi = ad || "Anonim";
+  if (anonimTest) {
+    return res.json({
+      success: true,
+      puan,
+      maxPuan,
+      sonuc,
+      benzerSayi: 0,
+      oncekiFark: null,
+      anonim: true
+    });
+  }
+
+  const temizAd = (ad || "Anonim").trim();
+  const temizSoyad = (soyad || "").trim();
+
+  const kullanici_kodu = `${temizAd}_${temizSoyad}`
+    .toLowerCase()
+    .replace(/\s+/g, "_");
 
   db.query(
     `SELECT puan FROM test_sonuclari
- WHERE kullanici_kodu = ?
- ORDER BY id DESC
- LIMIT 1`,
+     WHERE kullanici_kodu = ?
+     ORDER BY id DESC
+     LIMIT 1`,
     [kullanici_kodu],
     (err, eskiSonuc) => {
       if (err) {
@@ -112,23 +117,27 @@ if (anonimTest) {
       let fark = null;
 
       if (eskiSonuc.length > 0) {
-        fark = eskiSonuc[0].puan - puan;
+        fark = puan - eskiSonuc[0].puan;
       }
 
       const sql = `
-        INSERT INTO test_sonuclari 
-        (ad, yas, stres, puan, max_puan, sonuc)
-        VALUES (?, ?, ?, ?, ?, ?)
+        INSERT INTO test_sonuclari
+        (ad, soyad, kullanici_kodu, yas, stres, puan, max_puan, sonuc)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       `;
 
-      db.query(sql, [ad, soyad, kullanici_kodu, yas, stres, puan, maxPuan, sonuc], (err) => {
-        if (err) {
-          console.error(err);
-          return res.json({ success: false });
-        }
+      db.query(
+        sql,
+        [temizAd, temizSoyad, kullanici_kodu, yas, stres, puan, maxPuan, sonuc],
+        (err) => {
+          if (err) {
+            console.error(err);
+            return res.json({ success: false });
+          }
 
-        res.json({ success: true, fark });
-      });
+          res.json({ success: true, fark });
+        }
+      );
     }
   );
 });
