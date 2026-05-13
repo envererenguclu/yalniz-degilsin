@@ -28,8 +28,34 @@ const db = mysql.createConnection({
 });
 
 db.connect(err => {
-  if (err) throw err;
+  if (err) {
+    console.error("MySQL bağlantı hatası ama site çökmedi:", err.message);
+    return;
+  }
+
   console.log("MySQL bağlandı 🔥");
+
+  db.query(`
+    CREATE TABLE IF NOT EXISTS mesajlar (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      mesaj TEXT NOT NULL,
+      oda VARCHAR(100),
+      kullanici_adi VARCHAR(100),
+      tarih TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  db.query(`
+    CREATE TABLE IF NOT EXISTS test_sonuclari (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      ad VARCHAR(100),
+      yas INT,
+      stres INT,
+      puan INT,
+      max_puan INT,
+      sonuc VARCHAR(255)
+    )
+  `);
 });
 
 app.get("/", (req, res) => {
