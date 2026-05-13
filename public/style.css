@@ -2662,3 +2662,14 @@ body.page-dev {
     margin-bottom: 0;
     padding-bottom: 40px;
 }
+/* GENEL HERO HEADER ALTINA İNDİRME */
+
+main {
+    padding-top: 70px !important;
+}
+
+.room-hero,
+.rooms-hero,
+.hero-full {
+    margin-top: 0 !important;
+}
