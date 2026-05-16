@@ -1,7 +1,3 @@
-const puan = Number(localStorage.getItem("puan")) || 0;
-const maxPuan = Number(localStorage.getItem("maxPuan")) || 0;
-const sonuc = localStorage.getItem("sonuc");
-const ad = localStorage.getItem("ad") || "Kullanıcı";
 
 const baslik = document.getElementById("sonucBaslik");
 const metin = document.getElementById("sonucMetni");
@@ -9,14 +5,15 @@ const seviye = document.getElementById("sonucSeviye");
 const kart = document.getElementById("sonucKart");
 const progress = document.getElementById("progressFill");
 const puanText = document.getElementById("puanText");
+const params = new URLSearchParams(window.location.search);
+
+const ad = params.get("ad") || "Anonim";
+const soyad = params.get("soyad") || "";
+const puan = Number(params.get("puan")) || 0;
+const maxPuan = Number(params.get("maxPuan")) || 28;
+const sonuc = params.get("sonuc") || "";
 
 const oran = maxPuan > 0 ? Math.round((puan / maxPuan) * 100) : 0;
-localStorage.setItem("sonTest", JSON.stringify({
-  ad: `${params.get("ad") || "Anonim"} ${params.get("soyad") || ""}`.trim(),
-  sonuc: sonuc,
-  puan: puan,
-  maxPuan: maxPuan
-}));
 
 puanText.innerText = `${puan} / ${maxPuan}`;
 
@@ -115,12 +112,15 @@ const sertifikaBtn = document.getElementById("sertifikaBtn");
 
 if (sertifikaBtn) {
   sertifikaBtn.addEventListener("click", () => {
-    const veri = JSON.parse(localStorage.getItem("sonTest")) || {};
+    const tamAd =
+      ad.toLowerCase() === "anonim"
+        ? "Anonim Katılımcı"
+        : `${ad} ${soyad}`.trim();
 
     window.location.href =
-      `/sertifika?ad=${encodeURIComponent(veri.ad || "Anonim Katılımcı")}` +
-      `&sonuc=${encodeURIComponent(veri.sonuc || "Farkındalık Testi")}` +
-      `&puan=${encodeURIComponent(veri.puan || "-")}` +
-      `&maxPuan=${encodeURIComponent(veri.maxPuan || "28")}`;
+      `/sertifika?ad=${encodeURIComponent(tamAd)}` +
+      `&sonuc=${encodeURIComponent(sonuc || "Farkındalık Testi")}` +
+      `&puan=${encodeURIComponent(puan)}` +
+      `&maxPuan=${encodeURIComponent(maxPuan)}`;
   });
 }
