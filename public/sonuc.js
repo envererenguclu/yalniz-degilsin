@@ -1,3 +1,11 @@
+const params = new URLSearchParams(window.location.search);
+
+const puan = Number(params.get("puan") || localStorage.getItem("puan")) || 0;
+const maxPuan = Number(params.get("maxPuan") || localStorage.getItem("maxPuan")) || 28;
+const sonuc = params.get("sonuc") || localStorage.getItem("sonuc") || "";
+
+const ad = params.get("ad") || localStorage.getItem("ad") || "Anonim";
+const soyad = params.get("soyad") || localStorage.getItem("soyad") || "";
 
 const baslik = document.getElementById("sonucBaslik");
 const metin = document.getElementById("sonucMetni");
@@ -5,13 +13,7 @@ const seviye = document.getElementById("sonucSeviye");
 const kart = document.getElementById("sonucKart");
 const progress = document.getElementById("progressFill");
 const puanText = document.getElementById("puanText");
-const params = new URLSearchParams(window.location.search);
 
-const ad = params.get("ad") || "Anonim";
-const soyad = params.get("soyad") || "";
-const puan = Number(params.get("puan")) || 0;
-const maxPuan = Number(params.get("maxPuan")) || 28;
-const sonuc = params.get("sonuc") || "";
 
 const oran = maxPuan > 0 ? Math.round((puan / maxPuan) * 100) : 0;
 
