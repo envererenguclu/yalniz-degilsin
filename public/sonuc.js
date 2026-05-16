@@ -108,32 +108,31 @@ if (odaButonu) {
 const sertifikaBtn = document.getElementById("sertifikaBtn");
 
 if (sertifikaBtn) {
-
   const params = new URLSearchParams(window.location.search);
 
-  const ad = params.get("ad") || "Anonim";
-  const soyad = params.get("soyad") || "Katılımcı";
-
-  const sonucDegeri =
-    document.getElementById("sonuc-baslik")?.innerText ||
-    "Farkındalık Testi";
-
-  const puanDegeri =
-    document.getElementById("puanText")?.innerText ||
-    "-";
+  const ad = params.get("ad");
+  const soyad = params.get("soyad");
+  const anonim = params.get("anonim");
 
   const tamAd =
-    ad.toLowerCase() === "anonim"
+    anonim === "true" || !ad
       ? "Anonim Katılımcı"
-      : `${ad} ${soyad}`;
+      : `${ad} ${soyad || ""}`.trim();
+
+  const sonucDegeri =
+    document.getElementById("sonuc-baslik")?.innerText || "Farkındalık Testi";
+
+  const puanDegeri =
+    params.get("puan") || "-";
+
+  const maxPuanDegeri =
+    params.get("maxPuan") || "28";
 
   sertifikaBtn.addEventListener("click", () => {
-
     window.location.href =
       `/sertifika?ad=${encodeURIComponent(tamAd)}` +
       `&sonuc=${encodeURIComponent(sonucDegeri)}` +
-      `&puan=${encodeURIComponent(puanDegeri)}`;
-
+      `&puan=${encodeURIComponent(puanDegeri)}` +
+      `&maxPuan=${encodeURIComponent(maxPuanDegeri)}`;
   });
-
 }
