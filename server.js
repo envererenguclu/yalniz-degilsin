@@ -81,20 +81,66 @@ app.get("/sonuc", (req, res) => {
   res.render("sonuc");
 });
 app.get("/sertifika", (req, res) => {
-  const ad = req.query.ad || "Katılımcı";
+  const ad = req.query.ad || "Anonim Katılımcı";
   const sonuc = req.query.sonuc || "Farkındalık Testi";
   const puan = req.query.puan || "-";
   const maxPuan = req.query.maxPuan || "-";
-
   const tarih = new Date().toLocaleDateString("tr-TR");
 
-  res.render("sertifika", {
-    ad,
-    sonuc,
-    puan,
-    maxPuan,
-    tarih
-  });
+  res.send(`
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Farkındalık Sertifikası</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="certificate-page">
+
+<main class="certificate-wrap">
+  <section class="certificate-card">
+    <div class="certificate-logo">Yalnız Değilsin</div>
+
+    <p class="certificate-small">Ruh Sağlığı Farkındalık Katılım Belgesi</p>
+
+    <h1>Farkındalık Sertifikası</h1>
+
+    <p class="certificate-text">
+      Bu belge, <strong>${ad}</strong> adlı katılımcının
+      Yalnız Değilsin farkındalık testini tamamladığını ve
+      ruh sağlığı farkındalığına katkı sunduğunu gösterir.
+    </p>
+
+    <div class="certificate-info">
+      <div>
+        <span>Sonuç</span>
+        <strong>${sonuc}</strong>
+      </div>
+
+      <div>
+        <span>Puan</span>
+        <strong>${puan} / ${maxPuan}</strong>
+      </div>
+
+      <div>
+        <span>Tarih</span>
+        <strong>${tarih}</strong>
+      </div>
+    </div>
+
+    <p class="certificate-note">
+      Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
+    </p>
+
+    <button onclick="window.print()" class="print-btn">
+      Sertifikayı Yazdır / PDF Kaydet
+    </button>
+  </section>
+</main>
+
+</body>
+</html>
+  `);
 });
 app.post("/test-kaydet", (req, res) => {
   const { ad, soyad, yas, stres, puan, maxPuan, sonuc, anonimTest } = req.body;
