@@ -2753,3 +2753,42 @@ header nav a {
 .logo {
   color: var(--purple-main) !important;
 }
+/* ANA SAYFA KOYU ARKA PLAN KESİN FIX */
+
+body,
+main,
+.container,
+.hero,
+.hero-section,
+.hero-full,
+.hero-content,
+.hero-content-wrapper,
+.hero-wrapper,
+.main-hero {
+  background: linear-gradient(135deg, #eef8ff 0%, #f8f5ff 100%) !important;
+}
+
+/* Ana sayfa içindeki koyu lacivert alanı hedefle */
+section[class*="hero"],
+div[class*="hero"] {
+  background: linear-gradient(135deg, #eef8ff 0%, #f8f5ff 100%) !important;
+}
+
+/* Yazılar */
+.hero-text p,
+.hero-text-content p,
+.hero p,
+.hero-section p,
+.main-hero p {
+  color: #41637f !important;
+  opacity: 1 !important;
+}
+
+/* Morlar kalsın */
+.hero-text h1,
+.hero-text-content h1,
+.hero h1,
+.hero-section h1,
+.main-hero h1 {
+  color: #8b5cf6 !important;
+}
