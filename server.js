@@ -80,6 +80,22 @@ app.get("/test", (req, res) => {
 app.get("/sonuc", (req, res) => {
   res.render("sonuc");
 });
+app.get("/sertifika", (req, res) => {
+  const ad = req.query.ad || "Katılımcı";
+  const sonuc = req.query.sonuc || "Farkındalık Testi";
+  const puan = req.query.puan || "-";
+  const maxPuan = req.query.maxPuan || "-";
+
+  const tarih = new Date().toLocaleDateString("tr-TR");
+
+  res.render("sertifika", {
+    ad,
+    sonuc,
+    puan,
+    maxPuan,
+    tarih
+  });
+});
 app.post("/test-kaydet", (req, res) => {
   const { ad, soyad, yas, stres, puan, maxPuan, sonuc, anonimTest } = req.body;
 
