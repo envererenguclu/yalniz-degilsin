@@ -3060,72 +3060,79 @@ nav a:hover {
 .page-anonim .hero-text-content h1 {
     color: #8b5cf6 !important;
 }
-/* === HERO FOTO YARI DIŞARI TAŞMA FIX === */
+/* ANA SAYFA - KENDİNİ TEST ET CTA */
 
-.hero,
-.hero-full,
-.rooms-hero,
-.room-hero,
-.help-hero,
-.page-anonim .hero-full {
-    overflow: visible !important;
+.home-test-cta {
+    padding: 70px 10% !important;
+    background: linear-gradient(135deg, #eef8ff, #f7f2ff) !important;
 }
 
-.hero-image,
-.hero-image-content,
-.rooms-hero-image,
-.room-hero-image,
-.help-hero-image,
-.page-anonim .hero-image-content {
-    position: relative !important;
-    right: -110px !important;
-    z-index: 10 !important;
-    overflow: visible !important;
-}
+.home-test-card {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 44px 52px;
 
-.hero-image img,
-.hero-image-content img,
-.rooms-hero-image img,
-.room-hero-image img,
-.help-hero-image img,
-.page-anonim .hero-image-content img {
-    width: 620px !important;
-    max-width: 620px !important;
-    height: 520px !important;
-    object-fit: cover !important;
-    border-radius: 42px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
 
-    border: 10px solid rgba(255,255,255,0.55) !important;
+    background: rgba(255,255,255,0.88);
+    border: 1px solid rgba(139,92,246,0.18);
+    border-radius: 34px;
 
     box-shadow:
-        0 30px 90px rgba(139,92,246,0.22),
-        0 20px 55px rgba(70,100,130,0.18) !important;
+      0 22px 55px rgba(80,110,140,0.12),
+      0 18px 50px rgba(139,92,246,0.10);
 }
 
-/* Ana sayfa özel: resim ilk fotodaki gibi sağa taşsın */
-.hero .hero-image {
-    right: -130px !important;
+.home-test-text span {
+    color: #8b5cf6;
+    font-weight: 800;
+    font-size: 17px;
 }
 
-/* Mobilde taşmasın */
-@media (max-width: 992px) {
-    .hero-image,
-    .hero-image-content,
-    .rooms-hero-image,
-    .room-hero-image,
-    .help-hero-image,
-    .page-anonim .hero-image-content {
-        right: 0 !important;
+.home-test-text h2 {
+    margin: 10px 0 14px;
+    color: #8b5cf6 !important;
+    font-size: 42px !important;
+    line-height: 1.15;
+}
+
+.home-test-text p {
+    color: #456985 !important;
+    font-size: 19px !important;
+    line-height: 1.7;
+    max-width: 720px;
+}
+
+.home-test-btn {
+    flex-shrink: 0;
+    text-decoration: none;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    padding: 20px 34px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 900;
+
+    box-shadow: 0 18px 38px rgba(139,92,246,0.32);
+    transition: 0.25s ease;
+}
+
+.home-test-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(139,92,246,0.42);
+}
+
+@media (max-width: 850px) {
+    .home-test-card {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .hero-image img,
-    .hero-image-content img,
-    .rooms-hero-image img,
-    .room-hero-image img,
-    .help-hero-image img,
-    .page-anonim .hero-image-content img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 320px !important;
+    .home-test-btn {
+        width: 100%;
+        text-align: center;
     }
 }
