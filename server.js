@@ -77,6 +77,7 @@ app.get("/gelistiriciler", (req, res) => {
 app.get("/test", (req, res) => {
   res.render("test");
 });
+
 app.get("/sonuc", (req, res) => {
   res.render("sonuc", {
     ad: req.query.ad || "Anonim Katılımcı",

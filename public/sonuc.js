@@ -11,6 +11,12 @@ const progress = document.getElementById("progressFill");
 const puanText = document.getElementById("puanText");
 
 const oran = maxPuan > 0 ? Math.round((puan / maxPuan) * 100) : 0;
+localStorage.setItem("sonTest", JSON.stringify({
+  ad: `${params.get("ad") || "Anonim"} ${params.get("soyad") || ""}`.trim(),
+  sonuc: sonuc,
+  puan: puan,
+  maxPuan: maxPuan
+}));
 
 puanText.innerText = `${puan} / ${maxPuan}`;
 
@@ -108,31 +114,13 @@ if (odaButonu) {
 const sertifikaBtn = document.getElementById("sertifikaBtn");
 
 if (sertifikaBtn) {
-  const params = new URLSearchParams(window.location.search);
-
-  const ad = params.get("ad");
-  const soyad = params.get("soyad");
-  const anonim = params.get("anonim");
-
-  const tamAd =
-    anonim === "true" || !ad
-      ? "Anonim Katılımcı"
-      : `${ad} ${soyad || ""}`.trim();
-
-  const sonucDegeri =
-    document.getElementById("sonuc-baslik")?.innerText || "Farkındalık Testi";
-
-  const puanDegeri =
-    params.get("puan") || "-";
-
-  const maxPuanDegeri =
-    params.get("maxPuan") || "28";
-
   sertifikaBtn.addEventListener("click", () => {
+    const veri = JSON.parse(localStorage.getItem("sonTest")) || {};
+
     window.location.href =
-      `/sertifika?ad=${encodeURIComponent(tamAd)}` +
-      `&sonuc=${encodeURIComponent(sonucDegeri)}` +
-      `&puan=${encodeURIComponent(puanDegeri)}` +
-      `&maxPuan=${encodeURIComponent(maxPuanDegeri)}`;
+      `/sertifika?ad=${encodeURIComponent(veri.ad || "Anonim Katılımcı")}` +
+      `&sonuc=${encodeURIComponent(veri.sonuc || "Farkındalık Testi")}` +
+      `&puan=${encodeURIComponent(veri.puan || "-")}` +
+      `&maxPuan=${encodeURIComponent(veri.maxPuan || "28")}`;
   });
 }
