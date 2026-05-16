@@ -390,7 +390,7 @@ select {
     flex: 0.8;
     height: 480px;
     /* Samimi sohbet/destek temalı çalışan yeni link */
-    background: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat !important;
+    background: url('https://images.openai.com/static-rsc-4/tUqVSyXd9vKO6oShS48zQ6dxni1nk89PPwyn-u8pk3v510pn4K6wiWwSGFU3JLHHuRkwc7KV0M-8X7o1xi_LnZExo2CIzLK_R9xvwlYcSEO4ilYUUiPi1Cn0ZCL-t1EHCttph2WmpcfLPlCizs4qmJIRrJUu5jwTJ1M1EkUhhzAf0ia09Fx_SSfDO-_Q0Hbq?purpose=fullsize') center/cover no-repeat !important;
     border-radius: 40px 100px 40px 100px;
     box-shadow: 0 30px 70px rgba(0,0,0,0.4);
 }
@@ -3059,4 +3059,73 @@ nav a:hover {
 .help-hero-text h1,
 .page-anonim .hero-text-content h1 {
     color: #8b5cf6 !important;
+}
+/* === HERO FOTO YARI DIŞARI TAŞMA FIX === */
+
+.hero,
+.hero-full,
+.rooms-hero,
+.room-hero,
+.help-hero,
+.page-anonim .hero-full {
+    overflow: visible !important;
+}
+
+.hero-image,
+.hero-image-content,
+.rooms-hero-image,
+.room-hero-image,
+.help-hero-image,
+.page-anonim .hero-image-content {
+    position: relative !important;
+    right: -110px !important;
+    z-index: 10 !important;
+    overflow: visible !important;
+}
+
+.hero-image img,
+.hero-image-content img,
+.rooms-hero-image img,
+.room-hero-image img,
+.help-hero-image img,
+.page-anonim .hero-image-content img {
+    width: 620px !important;
+    max-width: 620px !important;
+    height: 520px !important;
+    object-fit: cover !important;
+    border-radius: 42px !important;
+
+    border: 10px solid rgba(255,255,255,0.55) !important;
+
+    box-shadow:
+        0 30px 90px rgba(139,92,246,0.22),
+        0 20px 55px rgba(70,100,130,0.18) !important;
+}
+
+/* Ana sayfa özel: resim ilk fotodaki gibi sağa taşsın */
+.hero .hero-image {
+    right: -130px !important;
+}
+
+/* Mobilde taşmasın */
+@media (max-width: 992px) {
+    .hero-image,
+    .hero-image-content,
+    .rooms-hero-image,
+    .room-hero-image,
+    .help-hero-image,
+    .page-anonim .hero-image-content {
+        right: 0 !important;
+    }
+
+    .hero-image img,
+    .hero-image-content img,
+    .rooms-hero-image img,
+    .room-hero-image img,
+    .help-hero-image img,
+    .page-anonim .hero-image-content img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 320px !important;
+    }
 }
