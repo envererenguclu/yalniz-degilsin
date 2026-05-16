@@ -3184,3 +3184,21 @@ nav a:hover {
     transform: translateY(-10px) scale(1.01);
     transition: 0.35s ease;
 }
+.veri-kaynak{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: #5f6f8a;
+}
+
+.veri-kaynak a{
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.veri-kaynak a:hover{
+    color: #6d28d9;
+    text-decoration: underline;
+}
