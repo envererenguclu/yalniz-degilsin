@@ -2972,3 +2972,91 @@ nav a:hover {
     position: relative !important;
     overflow: hidden !important;
 }
+/* === SON FERAHLATMA FIX === */
+
+/* Hero metin kartını 3. foto gibi yap */
+.hero-content,
+.rooms-hero-text,
+.room-hero-text,
+.help-hero-text,
+.page-anonim .hero-text-content {
+    background: rgba(255,255,255,0.34) !important;
+    border: 1px solid rgba(255,255,255,0.45) !important;
+    border-radius: 34px !important;
+    padding: 48px !important;
+    box-shadow: 0 24px 70px rgba(120,140,170,0.10) !important;
+    backdrop-filter: blur(18px) !important;
+}
+
+/* Çok sade duran hero alanına derinlik */
+.hero,
+.rooms-hero,
+.room-hero,
+.help-hero,
+.page-anonim .hero-full {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(139,92,246,0.10), transparent 32%),
+      radial-gradient(circle at 88% 24%, rgba(96,165,250,0.14), transparent 34%),
+      linear-gradient(135deg, #eaf6ff 0%, #f4f0ff 100%) !important;
+}
+
+/* Resim kutusunu daha premium yap */
+.hero-image,
+.rooms-hero-image img,
+.room-hero-image img,
+.help-hero-image img,
+.page-anonim .hero-image-content img {
+    border: 10px solid rgba(255,255,255,0.55) !important;
+    box-shadow:
+      0 28px 80px rgba(139,92,246,0.20),
+      0 18px 50px rgba(70,100,130,0.16) !important;
+}
+
+/* ODA SAYFASI: altta kalan koyu pagination şeridi */
+.page-oda .pagination {
+    background: rgba(240,248,255,0.92) !important;
+    border-top: 1px solid rgba(139,92,246,0.12) !important;
+}
+
+/* Pagination çevresindeki koyu alanı temizle */
+.page-oda .chat-shell .pagination,
+.page-oda .chat-shell > .pagination {
+    padding: 22px 0 !important;
+}
+
+/* ODA SAYFASI: mesaj yazma alt paneli kesin aç */
+.page-oda .chat-composer,
+.page-oda form,
+.page-oda .dc-chat-bottom {
+    background: rgba(255,255,255,0.86) !important;
+    border: 1px solid rgba(139,92,246,0.18) !important;
+    box-shadow: 0 22px 60px rgba(70,100,130,0.14) !important;
+}
+
+/* Inputlar koyu kalmasın */
+.page-oda .chat-composer input,
+.page-oda .chat-composer textarea,
+.page-oda form input,
+.page-oda form textarea {
+    background: #f8fcff !important;
+    color: #31526f !important;
+    border: 1px solid rgba(139,92,246,0.22) !important;
+}
+
+/* Yazı rengi */
+.hero p,
+.rooms-hero-text p,
+.room-hero-text p,
+.help-hero-text p,
+.page-anonim .hero-text-content p {
+    color: #426886 !important;
+}
+
+/* Başlıklar mor kalsın */
+.hero h1,
+.rooms-hero-text h1,
+.room-hero-text h1,
+.help-hero-text h1,
+.page-anonim .hero-text-content h1 {
+    color: #8b5cf6 !important;
+}
