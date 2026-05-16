@@ -2753,42 +2753,119 @@ header nav a {
 .logo {
   color: var(--purple-main) !important;
 }
-/* ANA SAYFA KOYU ARKA PLAN KESİN FIX */
+/* === FERAHLATILMIŞ MAVİ TEMA - KOYU ALANLARI AÇAR === */
 
-body,
-main,
-.container,
+:root {
+    --soft-page: #eef8ff;
+    --soft-panel: #e8f4ff;
+    --soft-panel-2: #f3f0ff;
+    --text-blue: #31526f;
+    --text-blue-soft: #5f7f9b;
+    --main-purple: #8b5cf6;
+}
+
+/* Ana koyu hero alanları */
 .hero,
-.hero-section,
 .hero-full,
-.hero-content,
-.hero-content-wrapper,
-.hero-wrapper,
-.main-hero {
-  background: linear-gradient(135deg, #eef8ff 0%, #f8f5ff 100%) !important;
+.page-anonim .hero-full,
+.help-hero,
+.rooms-hero,
+.room-hero {
+    background: linear-gradient(135deg, #e8f4ff 0%, #f3f0ff 100%) !important;
+    color: var(--text-blue) !important;
 }
 
-/* Ana sayfa içindeki koyu lacivert alanı hedefle */
-section[class*="hero"],
-div[class*="hero"] {
-  background: linear-gradient(135deg, #eef8ff 0%, #f8f5ff 100%) !important;
-}
-
-/* Yazılar */
+/* Hero açıklama yazıları */
+.hero p,
+.hero-content p,
 .hero-text p,
 .hero-text-content p,
-.hero p,
-.hero-section p,
-.main-hero p {
-  color: #41637f !important;
-  opacity: 1 !important;
+.help-hero-text p,
+.rooms-hero-text p,
+.room-hero-text p,
+.page-anonim .hero-text-content p {
+    color: var(--text-blue) !important;
+    opacity: 1 !important;
 }
 
-/* Morlar kalsın */
+/* Küçük gri etiketler */
+.hero-tag,
+.help-hero-text span {
+    color: var(--main-purple) !important;
+}
+
+/* Mor başlıklar aynen kalsın */
+.hero h1,
+.hero-content h1,
 .hero-text h1,
 .hero-text-content h1,
-.hero h1,
-.hero-section h1,
-.main-hero h1 {
-  color: #8b5cf6 !important;
+.help-hero-text h1,
+.rooms-hero-text h1,
+.room-hero-text h1,
+.page-anonim .hero-text-content h1 {
+    color: var(--main-purple) !important;
+}
+
+/* Oda sayfası arka planı ferah kalsın */
+body.page-oda {
+    background:
+        linear-gradient(rgba(232,244,255,0.72), rgba(243,240,255,0.72)),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1800&auto=format&fit=crop") center/cover fixed !important;
+}
+
+/* Sohbet paneli koyu değil, cam mavi panel */
+.page-oda .chat-shell {
+    background: rgba(232, 244, 255, 0.82) !important;
+    border: 1px solid rgba(139, 92, 246, 0.22) !important;
+    box-shadow: 0 30px 80px rgba(49, 82, 111, 0.20) !important;
+    backdrop-filter: blur(18px) !important;
+}
+
+/* Sohbet başlık kısmı */
+.page-oda .chat-header {
+    background: rgba(243, 240, 255, 0.88) !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.16) !important;
+}
+
+.page-oda .chat-header p {
+    color: var(--text-blue-soft) !important;
+}
+
+/* Mesaj akan alan */
+.page-oda .chat-panel {
+    background: rgba(238, 248, 255, 0.65) !important;
+}
+
+/* Mesaj kartları */
+.page-oda .chat-panel .message-card {
+    background: rgba(255, 255, 255, 0.82) !important;
+    color: var(--text-blue) !important;
+    border: 1px solid rgba(139, 92, 246, 0.16) !important;
+}
+
+.page-oda .chat-panel .message-card p,
+.page-oda .chat-panel .message-card strong {
+    color: var(--text-blue) !important;
+}
+
+.page-oda .chat-panel .message-card small {
+    color: var(--text-blue-soft) !important;
+}
+
+/* Mesaj yazma paneli */
+.page-oda form {
+    background: rgba(243, 240, 255, 0.88) !important;
+    border: 1px solid rgba(139, 92, 246, 0.20) !important;
+}
+
+.page-oda form input,
+.page-oda form textarea {
+    background: rgba(255, 255, 255, 0.92) !important;
+    color: var(--text-blue) !important;
+    border: 1px solid rgba(139, 92, 246, 0.24) !important;
+}
+
+.page-oda form input::placeholder,
+.page-oda form textarea::placeholder {
+    color: var(--text-blue-soft) !important;
 }
