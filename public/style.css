@@ -3136,3 +3136,51 @@ nav a:hover {
         text-align: center;
     }
 }
+/* CTA HAREKET EFEKTİ */
+
+.home-test-card {
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* BUTON CANLILIK */
+
+.home-test-btn {
+    animation: pulseGlow 2.6s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 rgba(139,92,246,0.25);
+    }
+
+    50% {
+        box-shadow:
+          0 0 28px rgba(139,92,246,0.45),
+          0 0 60px rgba(139,92,246,0.18);
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgba(139,92,246,0.25);
+    }
+}
+
+/* Hover */
+
+.home-test-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    transition: 0.35s ease;
+}
