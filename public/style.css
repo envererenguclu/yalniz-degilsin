@@ -2869,3 +2869,106 @@ body.page-oda {
 .page-oda form textarea::placeholder {
     color: var(--text-blue-soft) !important;
 }
+/* SAYFA GENEL AÇIKLIK */
+body {
+    background: #eef7ff !important;
+}
+
+/* HERO DAHA YUMUŞAK */
+.hero,
+.hero-full,
+.rooms-hero,
+.room-hero,
+.help-hero,
+.page-anonim .hero-full {
+    background:
+    linear-gradient(
+        135deg,
+        #edf7ff 0%,
+        #f6f2ff 100%
+    ) !important;
+}
+
+/* ALTTA KALAN KOYU PANELİ TEMİZLE */
+.page-oda .chat-shell,
+.page-oda .dc-chat-panel,
+.page-oda .chat-panel,
+.page-oda .dc-chat-body,
+.page-oda .dc-chat-bottom {
+    background: rgba(240,248,255,0.92) !important;
+}
+
+/* INPUT PANELİ */
+.page-oda form {
+    background: rgba(255,255,255,0.82) !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(139,92,246,0.16) !important;
+}
+
+/* INPUTLAR */
+.page-oda form input,
+.page-oda form textarea {
+    background: #f8fbff !important;
+    border: 1px solid rgba(139,92,246,0.18) !important;
+    color: #44607c !important;
+}
+
+/* PLACEHOLDER */
+.page-oda form input::placeholder,
+.page-oda form textarea::placeholder {
+    color: #6f88a0 !important;
+}
+
+/* YAZILAR */
+.hero p,
+.hero-content p,
+.room-hero-text p,
+.rooms-hero-text p,
+.help-hero-text p,
+.page-anonim p {
+    color: #4f6d88 !important;
+}
+
+/* MENÜ YAZILARI */
+nav a {
+    color: #344861 !important;
+}
+
+nav a:hover {
+    color: #8b5cf6 !important;
+}
+
+/* HERO İÇİN CAM EFEKTİ */
+.hero-content {
+    background: rgba(255,255,255,0.18) !important;
+    backdrop-filter: blur(14px) !important;
+    padding: 40px !important;
+    border-radius: 32px !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+}
+
+/* RESİM DAHA PREMIUM */
+.hero-image {
+    box-shadow:
+    0 25px 70px rgba(139,92,246,0.18),
+    0 10px 40px rgba(0,0,0,0.08) !important;
+}
+
+/* SAYFAYI SADELİKTEN ÇIKARAN SOFT PARILTILAR */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(139,92,246,0.08);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -120px;
+    left: -120px;
+}
+
+/* HERO POSITION */
+.hero {
+    position: relative !important;
+    overflow: hidden !important;
+}
