@@ -21,11 +21,17 @@
         Yalnız Değilsin farkındalık testini tamamladığını ve
         ruh sağlığı farkındalığına katkı sunduğunu gösterir.
       </p>
+<% 
+let sonucYazi = sonuc;
 
+if (sonuc === "hafif") sonucYazi = "Hafif Farkındalık";
+if (sonuc === "orta") sonucYazi = "Orta Düzey Destek";
+if (sonuc === "yuksek") sonucYazi = "Yüksek Destek İhtiyacı";
+%>
       <div class="certificate-info">
         <div>
           <span>Sonuç</span>
-          <strong><%= sonuc %></strong>
+         <strong><%= sonucYazi %></strong>
         </div>
 
         <div>

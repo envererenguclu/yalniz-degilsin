@@ -3390,3 +3390,102 @@ nav a:hover {
     display: none !important;
   }
 }
+/* === SONUÇ SAYFASI PREMIUM TASARIM === */
+
+.result-card {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(139,92,246,0.14), transparent 28%),
+    linear-gradient(135deg, #ffffff 0%, #f4f0ff 100%) !important;
+  border: 1px solid rgba(139,92,246,0.22) !important;
+  box-shadow: 0 28px 80px rgba(139,92,246,0.12) !important;
+  border-radius: 34px !important;
+  padding: 50px !important;
+}
+
+.result-badge {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white !important;
+  font-weight: 900;
+  box-shadow: 0 14px 35px rgba(139,92,246,0.28);
+}
+
+#sonucBaslik {
+  color: #8b5cf6 !important;
+  font-size: 46px !important;
+  margin-top: 22px !important;
+}
+
+#sonucMetni {
+  color: #426886 !important;
+  font-size: 20px !important;
+  line-height: 1.8 !important;
+  max-width: 1050px;
+  margin: 20px auto 40px;
+}
+
+.score-box {
+  background: rgba(255,255,255,0.82) !important;
+  border: 1px solid rgba(139,92,246,0.20) !important;
+  border-radius: 26px !important;
+  min-height: 150px !important;
+  box-shadow: 0 18px 45px rgba(70,100,130,0.10) !important;
+}
+
+.score-box h3 {
+  color: #8b5cf6 !important;
+}
+
+.score-box p,
+.score-box span {
+  color: #27445f !important;
+  font-weight: 900 !important;
+}
+
+.progress-area {
+  margin-top: 36px;
+  background: rgba(255,255,255,0.72);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(139,92,246,0.15);
+}
+
+.progress-area p {
+  color: #426886 !important;
+  font-weight: 800;
+}
+
+.progress-bar {
+  background: #e9eff7 !important;
+  height: 16px !important;
+  border-radius: 999px !important;
+  overflow: hidden;
+}
+
+#progressFill {
+  background: linear-gradient(135deg, #8b5cf6, #60a5fa) !important;
+  height: 100% !important;
+  border-radius: 999px !important;
+}
+
+.result-buttons {
+  margin-top: 36px;
+  gap: 18px !important;
+}
+
+.result-buttons a,
+.sertifika-btn {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  box-shadow: 0 18px 38px rgba(139,92,246,0.26) !important;
+  transition: 0.25s ease !important;
+}
+
+.result-buttons a:hover,
+.sertifika-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(139,92,246,0.36) !important;
+}
