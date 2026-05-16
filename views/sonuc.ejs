@@ -62,7 +62,7 @@
 </a>
 <a 
   class="sertifika-btn"
-  href="/sertifika?ad=<%= ad || 'Katılımcı' %>&sonuc=<%= sonuc %>&puan=<%= puan %>&maxPuan=<%= maxPuan %>"
+  href="/sertifika?ad=<%= typeof ad !== 'undefined' && ad ? ad : 'Anonim Katılımcı' %>&sonuc=<%= typeof sonuc !== 'undefined' ? sonuc : 'Farkındalık Testi' %>&puan=<%= typeof puan !== 'undefined' ? puan : '-' %>&maxPuan=<%= typeof maxPuan !== 'undefined' ? maxPuan : '-' %>"
 >
   Farkındalık Sertifikanı Oluştur
 </a>
