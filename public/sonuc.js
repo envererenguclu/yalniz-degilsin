@@ -105,3 +105,20 @@ if (odaButonu) {
     odaButonu.innerText = "Kaygı Destek Odasına Git";
   }
 }
+const sertifikaBtn = document.getElementById("sertifikaBtn");
+
+if (sertifikaBtn) {
+  const adParam = params.get("ad") || "Anonim";
+  const soyadParam = params.get("soyad") || "Katılımcı";
+
+  const tamAd =
+    adParam.toLowerCase() === "anonim"
+      ? "Anonim Katılımcı"
+      : `${adParam} ${soyadParam}`.trim();
+
+  sertifikaBtn.href =
+    `/sertifika?ad=${encodeURIComponent(tamAd)}` +
+    `&sonuc=${encodeURIComponent(sonuc || "Farkındalık Testi")}` +
+    `&puan=${encodeURIComponent(puan || "-")}` +
+    `&maxPuan=${encodeURIComponent(maxPuan || "-")}`;
+}
