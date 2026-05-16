@@ -78,7 +78,13 @@ app.get("/test", (req, res) => {
   res.render("test");
 });
 app.get("/sonuc", (req, res) => {
-  res.render("sonuc");
+  res.render("sonuc", {
+    ad: req.query.ad || "Anonim Katılımcı",
+    soyad: req.query.soyad || "",
+    sonuc: req.query.sonuc || "Farkındalık Testi",
+    puan: req.query.puan || "-",
+    maxPuan: req.query.maxPuan || "28"
+  });
 });
 app.get("/sertifika", (req, res) => {
   const ad = req.query.ad || "Anonim Katılımcı";
