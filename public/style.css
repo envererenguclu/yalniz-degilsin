@@ -3874,4 +3874,40 @@ nav a:hover {
     margin:0;
     box-shadow:none;
   }
+}.real-certificate{
+  background:#7c3aed !important;
+}
+
+.cert-inner{
+  background:#f8f6ff !important;
+  border:3px solid #8b5cf6 !important;
+}
+
+.corner{
+  color:#8b5cf6 !important;
+  font-size:70px !important;
+}
+
+.real-certificate h1{
+  color:#334e68 !important;
+}
+
+.real-certificate h2{
+  color:#8b5cf6 !important;
+}
+
+.gold-seal{
+  background:radial-gradient(circle,#c4b5fd,#8b5cf6 70%) !important;
+  color:white !important;
+}
+
+.cert-details div{
+  background:#f3efff !important;
+  border:1px solid #c4b5fd !important;
+}
+
+.cert-brand,
+.cert-signatures p,
+.cert-main-text{
+  color:#334e68 !important;
 }

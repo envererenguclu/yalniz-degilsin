@@ -108,10 +108,10 @@ app.get("/sertifika", (req, res) => {
   <section class="real-certificate">
     <div class="cert-inner">
 
-      <div class="corner corner-tl">❦</div>
-      <div class="corner corner-tr">❦</div>
-      <div class="corner corner-bl">❦</div>
-      <div class="corner corner-br">❦</div>
+     <div class="corner corner-tl">♡</div>
+<div class="corner corner-tr">♡</div>
+<div class="corner corner-bl">✦</div>
+<div class="corner corner-br">✦</div>
 
       <div class="cert-brand">Yalnız Değilsin</div>
 
