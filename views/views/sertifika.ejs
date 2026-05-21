@@ -10,17 +10,24 @@
   <main class="certificate-wrap">
     <section class="certificate-card">
 
-      <div class="certificate-logo">Yalnız Değilsin</div>
+      <div class="certificate-badge">🏅</div>
 
-      <p class="certificate-small">Ruh Sağlığı Farkındalık Katılım Belgesi</p>
+<h1 class="certificate-title">
+  Farkındalık Yolculuğu
+</h1>
 
-      <h1>Farkındalık Sertifikası</h1>
+<h2 class="certificate-subtitle">
+  Başarı Sertifikası
+</h2>
 
-      <p class="certificate-text">
-        Bu belge, <strong><%= ad %></strong> adlı katılımcının
-        Yalnız Değilsin farkındalık testini tamamladığını ve
-        ruh sağlığı farkındalığına katkı sunduğunu gösterir.
-      </p>
+<p class="certificate-user">
+  <%= ad %>
+</p>
+
+<p class="certificate-desc">
+  ruh sağlığı farkındalık yolculuğunu tamamlayarak
+  kendine destek olma sürecine katkı sağlamıştır.
+</p>
 <% 
 let sonucYazi = sonuc;
 
@@ -44,6 +51,18 @@ if (sonuc === "yuksek") sonucYazi = "Yüksek Destek İhtiyacı";
           <strong><%= tarih %></strong>
         </div>
       </div>
+      <div class="certificate-bottom">
+
+  <div class="certificate-score">
+    <span>Puan</span>
+    <strong><%= puan %> / <%= maxPuan %></strong>
+  </div>
+
+  <div class="certificate-seal">
+    YALNIZ DEĞİLSİN
+  </div>
+
+</div>
 
       <p class="certificate-note">
         Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
