@@ -126,3 +126,45 @@ if (sertifikaBtn) {
       `&maxPuan=${encodeURIComponent(maxPuan)}`;
   });
 }
+const gorevler = document.querySelectorAll(".journey-tasks input");
+const feelingBox = document.getElementById("feelingBox");
+const feelMessage = document.getElementById("feelMessage");
+
+function kontrolEt() {
+
+  const tamamlandi =
+    [...gorevler].every(g => g.checked);
+
+  if(tamamlandi){
+    feelingBox.style.display = "block";
+  }
+}
+
+gorevler.forEach(g => {
+  g.addEventListener("change", kontrolEt);
+});
+
+document.querySelectorAll(".feeling-btn").forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    const secim = btn.dataset.feel;
+
+    if(secim === "evet" || secim === "biraz"){
+
+      sertifikaBtn.style.display = "inline-block";
+
+      feelMessage.innerText =
+        "Tebrikler 🎉 Farkındalık Yolculuğu Sertifikan açıldı.";
+
+    } else {
+
+      sertifikaBtn.style.display = "none";
+
+      feelMessage.innerText =
+        "Bazı duygular zaman alabilir. Daha sonra tekrar deneyebilirsin. Yalnız değilsin.";
+    }
+
+  });
+
+});

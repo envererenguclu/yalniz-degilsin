@@ -3504,3 +3504,61 @@ nav a:hover {
   top: -120px;
   right: -70px;
 }
+/* FARKINDALIK YOLCULUĞU */
+
+.journey-box{
+  margin-top:40px;
+  padding:35px;
+  border-radius:28px;
+  background:linear-gradient(135deg,#f5f3ff,#eef4ff);
+  border:1px solid rgba(139,92,246,0.18);
+}
+
+.journey-box h3{
+  color:#7c3aed;
+  margin-bottom:20px;
+}
+
+.journey-tasks{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.journey-tasks label{
+  font-size:17px;
+  color:#334e68;
+  font-weight:600;
+}
+
+.journey-tasks input{
+  margin-right:10px;
+  transform:scale(1.2);
+}
+
+.feeling-box{
+  margin-top:30px;
+}
+
+.feeling-box h4{
+  color:#7c3aed;
+  margin-bottom:16px;
+}
+
+.feeling-btn{
+  padding:14px 20px;
+  border:none;
+  border-radius:16px;
+  margin-right:10px;
+  margin-top:10px;
+  cursor:pointer;
+  background:#8b5cf6;
+  color:white;
+  font-weight:700;
+}
+
+#feelMessage{
+  margin-top:20px;
+  font-weight:700;
+  color:#334e68;
+}
