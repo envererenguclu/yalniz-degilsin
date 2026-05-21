@@ -3911,3 +3911,107 @@ nav a:hover {
 .cert-main-text{
   color:#334e68 !important;
 }
+/* === SERTİFİKA TEK SAYFA + SİTEYE UYUMLU === */
+
+.real-certificate {
+  width: 1050px !important;
+  margin: 25px auto !important;
+  background: #ffffff !important;
+  padding: 18px !important;
+  border-radius: 22px !important;
+  box-shadow: 0 20px 60px rgba(139,92,246,0.16) !important;
+}
+
+.cert-inner {
+  min-height: 560px !important;
+  padding: 42px 60px 28px !important;
+  background: linear-gradient(135deg, #ffffff, #f5f3ff) !important;
+  border: 3px solid #8b5cf6 !important;
+  border-radius: 18px !important;
+}
+
+.corner {
+  color: #8b5cf6 !important;
+  font-size: 46px !important;
+}
+
+.real-certificate h1 {
+  color: #7c3aed !important;
+  font-size: 36px !important;
+  letter-spacing: 7px !important;
+  margin-bottom: 6px !important;
+}
+
+.real-certificate h2 {
+  color: #7c3aed !important;
+  font-size: 50px !important;
+  margin: 10px 0 16px !important;
+}
+
+.cert-brand {
+  color: #334e68 !important;
+  margin-bottom: 18px !important;
+}
+
+.cert-main-text {
+  color: #334e68 !important;
+  font-size: 15px !important;
+  max-width: 720px !important;
+  margin-bottom: 18px !important;
+}
+
+.cert-details {
+  margin: 18px 0 !important;
+}
+
+.gold-seal {
+  width: 82px !important;
+  height: 82px !important;
+  font-size: 38px !important;
+  background: radial-gradient(circle, #c4b5fd, #8b5cf6 70%) !important;
+  color: white !important;
+  margin: 8px auto !important;
+}
+
+.cert-signatures {
+  margin-top: 8px !important;
+}
+
+.cert-note {
+  margin-top: 10px !important;
+  font-size: 12px !important;
+}
+
+.print-btn {
+  margin-top: 14px !important;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 5mm;
+  }
+
+  body.certificate-page {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  .real-certificate {
+    width: 100% !important;
+    height: 190mm !important;
+    margin: 0 !important;
+    padding: 8mm !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+  }
+
+  .cert-inner {
+    min-height: 170mm !important;
+    padding: 28px 50px 20px !important;
+  }
+
+  .print-btn {
+    display: none !important;
+  }
+}
