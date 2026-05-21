@@ -3562,3 +3562,27 @@ nav a:hover {
   font-weight:700;
   color:#334e68;
 }
+.result-buttons {
+  align-items: stretch !important;
+}
+
+.result-buttons .hero-button {
+  height: 120px !important;
+  min-height: 120px !important;
+  max-height: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.journey-box {
+  width: 100% !important;
+  margin-top: 35px !important;
+}
+
+.sertifika-btn {
+  width: fit-content !important;
+  min-height: auto !important;
+  height: auto !important;
+  margin: 30px auto 0 !important;
+}
