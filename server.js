@@ -105,39 +105,63 @@ app.get("/sertifika", (req, res) => {
 <body class="certificate-page">
 
 <main class="certificate-wrap">
-  <section class="certificate-card">
-    <div class="certificate-logo">Yalnız Değilsin</div>
+  <section class="real-certificate">
+    <div class="cert-inner">
 
-    <p class="certificate-small">Ruh Sağlığı Farkındalık Katılım Belgesi</p>
+      <div class="corner corner-tl">❦</div>
+      <div class="corner corner-tr">❦</div>
+      <div class="corner corner-bl">❦</div>
+      <div class="corner corner-br">❦</div>
 
-    <h1>Farkındalık Sertifikası</h1>
+      <div class="cert-brand">Yalnız Değilsin</div>
 
-    <p class="certificate-text">
-      Bu belge, <strong>${ad}</strong> adlı katılımcının
-      Yalnız Değilsin farkındalık testini tamamladığını ve
-      ruh sağlığı farkındalığına katkı sunduğunu gösterir.
-    </p>
+      <h1>KATILIM SERTİFİKASI</h1>
 
-    <div class="certificate-info">
-      <div>
-        <span>Sonuç</span>
-        <strong>${sonuc}</strong>
+      <p class="cert-sayin">Sayın</p>
+
+      <h2>${ad}</h2>
+
+      <p class="cert-main-text">
+        Yalnız Değilsin platformunda ruh sağlığı farkındalık yolculuğunu tamamlamış,
+        kendine destek olma sürecine katkı sağlamıştır.
+      </p>
+
+      <div class="cert-details">
+        <div>
+          <span>Sonuç</span>
+          <strong>${sonuc}</strong>
+        </div>
+
+        <div>
+          <span>Puan</span>
+          <strong>${puan} / ${maxPuan}</strong>
+        </div>
+
+        <div>
+          <span>Tarih</span>
+          <strong>${tarih}</strong>
+        </div>
       </div>
 
-      <div>
-        <span>Puan</span>
-        <strong>${puan} / ${maxPuan}</strong>
+      <div class="gold-seal">★</div>
+
+      <div class="cert-signatures">
+        <div>
+          <span></span>
+          <p>Yalnız Değilsin Ekibi</p>
+        </div>
+
+        <div>
+          <span></span>
+          <p>Farkındalık Onayı</p>
+        </div>
       </div>
 
-      <div>
-        <span>Tarih</span>
-        <strong>${tarih}</strong>
-      </div>
+      <p class="cert-note">
+        Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
+      </p>
+
     </div>
-
-    <p class="certificate-note">
-      Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
-    </p>
 
     <button onclick="window.print()" class="print-btn">
       Sertifikayı Yazdır / PDF Kaydet
