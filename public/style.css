@@ -4073,3 +4073,9 @@ nav a:hover {
     margin: 4mm auto !important;
   }
 }
+.cert-note{
+  margin-top: -10px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color:#334e68 !important;
+}
