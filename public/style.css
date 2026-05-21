@@ -4015,3 +4015,61 @@ nav a:hover {
     display: none !important;
   }
 }
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html,
+  body.certificate-page {
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: white !important;
+  }
+
+  .certificate-wrap {
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .real-certificate {
+    width: 277mm !important;
+    height: 190mm !important;
+    margin: 10mm !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    page-break-inside: avoid !important;
+    overflow: hidden !important;
+  }
+
+  .cert-inner {
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 18mm 22mm 10mm !important;
+    overflow: hidden !important;
+  }
+
+  .print-btn {
+    display: none !important;
+  }
+
+  .cert-note {
+    margin-top: 6mm !important;
+  }
+
+  .gold-seal {
+    width: 20mm !important;
+    height: 20mm !important;
+    font-size: 26px !important;
+    margin: 4mm auto !important;
+  }
+}
