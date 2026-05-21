@@ -5,76 +5,84 @@
   <title>Farkındalık Sertifikası</title>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body class="certificate-page">
 
-  <main class="certificate-wrap">
-   <section class="real-certificate">
+<main class="certificate-wrap">
 
-  <div class="cert-inner">
+  <section class="real-certificate">
 
-    <div class="corner corner-tl">❧</div>
-    <div class="corner corner-tr">❧</div>
-    <div class="corner corner-bl">❧</div>
-    <div class="corner corner-br">❧</div>
+    <div class="cert-inner">
 
-    <div class="cert-brand">Yalnız Değilsin</div>
+      <div class="corner corner-tl">❦</div>
+      <div class="corner corner-tr">❦</div>
+      <div class="corner corner-bl">❦</div>
+      <div class="corner corner-br">❦</div>
 
-    <h1>KATILIM SERTİFİKASI</h1>
+      <div class="cert-brand">Yalnız Değilsin</div>
 
-    <p class="cert-sayin">Sayın</p>
+      <h1>KATILIM SERTİFİKASI</h1>
 
-    <h2><%= ad %></h2>
+      <p class="cert-sayin">Sayın</p>
 
-    <% 
-      let sonucYazi = sonuc;
-      if (sonuc === "hafif") sonucYazi = "Hafif Farkındalık";
-      if (sonuc === "orta") sonucYazi = "Orta Düzey Destek";
-      if (sonuc === "yuksek") sonucYazi = "Yüksek Destek İhtiyacı";
-    %>
+      <h2><%= ad %></h2>
 
-    <p class="cert-main-text">
-      Yalnız Değilsin platformunda ruh sağlığı farkındalık yolculuğunu tamamlamış,
-      kendine destek olma sürecine katkı sağlamıştır.
-    </p>
+      <% 
+        let sonucYazi = sonuc;
+        if (sonuc === "hafif") sonucYazi = "Hafif Farkındalık";
+        if (sonuc === "orta") sonucYazi = "Orta Düzey Destek";
+        if (sonuc === "yuksek") sonucYazi = "Yüksek Destek İhtiyacı";
+      %>
 
-    <div class="cert-details">
-      <div>
-        <span>Sonuç</span>
-        <strong><%= sonucYazi %></strong>
+      <p class="cert-main-text">
+        Yalnız Değilsin platformunda ruh sağlığı farkındalık yolculuğunu tamamlamış,
+        kendine destek olma sürecine katkı sağlamıştır.
+      </p>
+
+      <div class="cert-details">
+        <div>
+          <span>Sonuç</span>
+          <strong><%= sonucYazi %></strong>
+        </div>
+
+        <div>
+          <span>Puan</span>
+          <strong><%= puan %> / <%= maxPuan %></strong>
+        </div>
+
+        <div>
+          <span>Tarih</span>
+          <strong><%= tarih %></strong>
+        </div>
       </div>
-      <div>
-        <span>Puan</span>
-        <strong><%= puan %> / <%= maxPuan %></strong>
+
+      <div class="gold-seal">★</div>
+
+      <div class="cert-signatures">
+        <div>
+          <span></span>
+          <p>Yalnız Değilsin Ekibi</p>
+        </div>
+
+        <div>
+          <span></span>
+          <p>Farkındalık Onayı</p>
+        </div>
       </div>
-      <div>
-        <span>Tarih</span>
-        <strong><%= tarih %></strong>
-      </div>
+
+      <p class="cert-note">
+        Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
+      </p>
+
     </div>
 
-    <div class="gold-seal">★</div>
+    <button onclick="window.print()" class="print-btn">
+      Sertifikayı Yazdır / PDF Kaydet
+    </button>
 
-    <div class="cert-signatures">
-      <div>
-        <span></span>
-        <p>Yalnız Değilsin Ekibi</p>
-      </div>
-      <div>
-        <span></span>
-        <p>Farkındalık Onayı</p>
-      </div>
-    </div>
+  </section>
 
-    <p class="cert-note">
-      Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
-    </p>
-
-  </div>
-
-  <button onclick="window.print()" class="print-btn">Sertifikayı Yazdır / PDF Kaydet</button>
-
-</section>
-  </main>
+</main>
 
 </body>
 </html>
