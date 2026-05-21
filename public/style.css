@@ -3586,3 +3586,24 @@ nav a:hover {
   height: auto !important;
   margin: 30px auto 0 !important;
 }
+.sertifika-btn{
+  display:none;
+  padding:18px 34px !important;
+  border-radius:18px !important;
+  background:linear-gradient(135deg,#8b5cf6,#7c3aed) !important;
+  color:white !important;
+  font-size:18px;
+  font-weight:700;
+  text-decoration:none;
+  width:fit-content !important;
+  height:auto !important;
+  min-height:auto !important;
+  max-height:none !important;
+  margin:35px auto 0 !important;
+  box-shadow:0 10px 30px rgba(124,58,237,0.25);
+  transition:0.3s;
+}
+
+.sertifika-btn:hover{
+  transform:translateY(-3px);
+}
