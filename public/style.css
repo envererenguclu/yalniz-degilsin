@@ -3717,3 +3717,103 @@ nav a:hover {
   box-shadow:
   0 10px 40px rgba(234,179,8,0.4);
 }
+/* SERTİFİKA TEMİZ PREMIUM TASARIM */
+
+.certificate-card {
+  background: #ffffff !important;
+  border: 6px solid #8b5cf6 !important;
+  border-radius: 34px !important;
+  padding: 65px 70px !important;
+  max-width: 1050px !important;
+  margin: 45px auto !important;
+  text-align: center !important;
+  box-shadow: 0 25px 70px rgba(139, 92, 246, 0.22) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 3px double #c4b5fd;
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.certificate-card::after {
+  content: "★";
+  position: absolute;
+  top: 28px;
+  right: 45px;
+  font-size: 70px;
+  color: #facc15;
+  opacity: 0.9;
+}
+
+.certificate-logo,
+.certificate-title {
+  color: #7c3aed !important;
+  font-size: 42px !important;
+  font-weight: 900 !important;
+}
+
+.certificate-small,
+.certificate-subtitle {
+  color: #334e68 !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px;
+}
+
+.certificate-card h1 {
+  color: #7c3aed !important;
+  font-size: 66px !important;
+  font-weight: 900 !important;
+  margin: 45px 0 25px !important;
+  text-shadow: none !important;
+}
+
+.certificate-text,
+.certificate-desc,
+.certificate-note {
+  color: #27445f !important;
+  font-size: 20px !important;
+  line-height: 1.8 !important;
+}
+
+.certificate-info {
+  margin-top: 42px !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 24px !important;
+  flex-wrap: wrap !important;
+}
+
+.certificate-info div {
+  background: #f4f0ff !important;
+  border: 2px solid #c4b5fd !important;
+  border-radius: 22px !important;
+  padding: 24px 34px !important;
+  min-width: 180px !important;
+}
+
+.certificate-info span {
+  color: #64748b !important;
+  font-size: 15px !important;
+}
+
+.certificate-info strong {
+  color: #0f2742 !important;
+  font-size: 25px !important;
+}
+
+.print-btn {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 18px 45px !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+}
