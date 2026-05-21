@@ -8,29 +8,22 @@
 <body class="certificate-page">
 
   <main class="certificate-wrap">
-   <section class="certificate-card certificate-new">
+   <section class="real-certificate">
 
-  <div class="cert-left">
-    <div class="cert-medal">✦</div>
-    <div class="cert-seal-text">YALNIZ<br>DEĞİLSİN</div>
-    <div class="cert-line"></div>
-    <p>Farkındalık Yolculuğu</p>
-  </div>
+  <div class="cert-inner">
 
-  <div class="cert-right">
+    <div class="corner corner-tl">❧</div>
+    <div class="corner corner-tr">❧</div>
+    <div class="corner corner-bl">❧</div>
+    <div class="corner corner-br">❧</div>
 
-    <div class="cert-top-label">Ruh Sağlığı Farkındalık Belgesi</div>
+    <div class="cert-brand">Yalnız Değilsin</div>
 
-    <h1>Başarı Sertifikası</h1>
+    <h1>KATILIM SERTİFİKASI</h1>
 
-    <p class="cert-presented">Bu sertifika</p>
+    <p class="cert-sayin">Sayın</p>
 
     <h2><%= ad %></h2>
-
-    <p class="cert-desc">
-      adlı katılımcının Yalnız Değilsin platformunda farkındalık yolculuğunu
-      tamamladığını ve kendine destek olma sürecine katkı sağladığını gösterir.
-    </p>
 
     <% 
       let sonucYazi = sonuc;
@@ -39,39 +32,46 @@
       if (sonuc === "yuksek") sonucYazi = "Yüksek Destek İhtiyacı";
     %>
 
-    <div class="cert-info-row">
+    <p class="cert-main-text">
+      Yalnız Değilsin platformunda ruh sağlığı farkındalık yolculuğunu tamamlamış,
+      kendine destek olma sürecine katkı sağlamıştır.
+    </p>
+
+    <div class="cert-details">
       <div>
         <span>Sonuç</span>
         <strong><%= sonucYazi %></strong>
       </div>
-
       <div>
         <span>Puan</span>
         <strong><%= puan %> / <%= maxPuan %></strong>
       </div>
-
       <div>
         <span>Tarih</span>
         <strong><%= tarih %></strong>
       </div>
     </div>
 
-    <div class="cert-footer">
-      <div class="cert-sign">
-        <div></div>
-        <span>Yalnız Değilsin Ekibi</span>
-      </div>
+    <div class="gold-seal">★</div>
 
-      <p>
-        Bu belge tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
-      </p>
+    <div class="cert-signatures">
+      <div>
+        <span></span>
+        <p>Yalnız Değilsin Ekibi</p>
+      </div>
+      <div>
+        <span></span>
+        <p>Farkındalık Onayı</p>
+      </div>
     </div>
 
-    <button onclick="window.print()" class="print-btn">
-      Sertifikayı Yazdır / PDF Kaydet
-    </button>
+    <p class="cert-note">
+      Bu sertifika tıbbi tanı niteliği taşımaz. Farkındalık ve bilgilendirme amacıyla oluşturulmuştur.
+    </p>
 
   </div>
+
+  <button onclick="window.print()" class="print-btn">Sertifikayı Yazdır / PDF Kaydet</button>
 
 </section>
   </main>
